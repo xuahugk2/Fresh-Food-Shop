@@ -1,0 +1,88 @@
+﻿@model LAPTRINHWEB.Models.Categorys
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align: center"><strong>CHI TIẾT LOẠI SẢN PHẨM</strong></h2>
+
+<div style="margin-left: 80px;">
+    <hr />
+    <table>
+        <thead>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Id)</th>
+                <th style="border:1px solid black; padding:16px; width: 300px;">@Html.DisplayFor(m => m.Id)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Name)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Name)</th>
+            </tr>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Slug)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Slug)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.ParentId)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.ParentId)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Orders)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Orders)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Img)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Img)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.MetaKey)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.MetaKey)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.MetaDesc)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.MetaDesc)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Created_By)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Created_By)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Created_At)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Created_At)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Updated_By)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Updated_By)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Status)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Status)</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<p style="margin-top: 30px; font-size: 17px; margin-left: 165px">
+    @Html.ActionLink("Edit", "chinhsua", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Loaisanpham")
+</p>

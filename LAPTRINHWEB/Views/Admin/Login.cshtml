@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+    <link href="~/Public/Admin/CSS/admin.css" rel="stylesheet" />
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+<div class="form-tt" style="margin-top: 40px;">
+    <h2>LOGIN</h2>
+    <h4>@ViewBag.Thongbao</h4>
+    <form action="#" method="post" name="dang-nhap">
+        <br/>
+        <input type="text" name="username" placeholder="Username"/>
+        @ViewData["loi1"]
+        <br/>
+        <input type="password" name="password" placeholder="Password"/>
+        @ViewData["loi2"]
+        <br/>
+        <input type="checkbox" id="checkbox" name="checkbox"><label class="checkbox-text">Remember me</label> <br/> <br/>
+        <button type="submit" class="btn" style="width: 80px; height: 40px; background-color: yellow">LOGIN</button>
+    </form>
+
+</div>
+</body>
+</html>

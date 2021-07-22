@@ -1,0 +1,32 @@
+﻿@model IEnumerable<LAPTRINHWEB.Models.Products>
+@{
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container" style="width:100%">
+    @foreach (var item in Model)
+    {
+        <div class="card card-fixed">
+            <img style="width: 100%; height: auto;" src="~/IMG/Products/@item.Img" class="card-img-top" alt="@item.Name">
+            <div class="card-body">
+                <h5 class="card-title" style="height:45px; text-align:center">
+                    <strong>@item.Name</strong>
+                </h5>
+                <p class="card-text" style="text-align:center">
+                    @if (item.PriceBuy == 0)
+                    {
+                        @Html.ActionLink("Giá liên hệ", "LienHe", "Home")
+                    }
+                    @if (item.PriceBuy != 0)
+                    {
+                        @item.PriceBuy
+                    }
+                </p>
+                <a style="width:100%" href="@Url.Action("Themgiohang","Home", new { @Masp = item.Id, @strUrl = Request.Url.ToString()})" class="btn btn-primary">Mua hàng</a>
+            </div>
+        </div>
+    }
+</div>

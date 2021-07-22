@@ -1,0 +1,57 @@
+﻿@model LAPTRINHWEB.Models.Products
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="font-weight: bold; text-align: center">CHI TIẾT SẢN PHẨM</h2>
+
+<div style="margin-left: 80px; margin-left: 15%">
+    <hr />
+    <table>
+        <thead>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">Mã sản phẩm</th>
+                <th style="border:1px solid black; padding:16px;  width: 400px;">@Html.DisplayFor(m => m.Id)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">Tên sản phẩm</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Name)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">Tên tiếng anh</th>                
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Detail)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">Giá cả</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.PriceBuy)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">Hình ảnh</th>
+                <th style="border:1px solid black; padding:16px;"><img src="~/IMG/Products/@Model.Img" alt="Alternate Text" width="400" height="200" /></th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">Ngày đăng</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Created_At)</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row" style="margin-top: 10px; margin-left: 10px">
+    <div class="col-md-6" style="margin-left: 100px"> <a href="~/Products/Index/0" class="btn btn-warning" style="font-weight: bold"><i class="fa fa-angle-left"></i> Xem thêm sản phẩm</a></div>
+    <div class="col-md-2"> <a style="width:100%" href="@Url.Action("Themgiohang","Home", new { @Masp = Model.Id, @strUrl = Request.Url.ToString()})" class="btn btn-primary"> Mua hàng <i class="fa fa-angle-right"></i></a></div>
+</div>
+
+
+

@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <link href="~/Public/CSS/all.min.css" rel="stylesheet" />
+    <link href="~/Public/Admin/CSS/admin.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/01ec9d7b95.js" crossorigin="anonymous"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="head">
+        <a href="~/Admin/Sanpham"><b>QUẢN LÝ SẢN PHẨM</b></a>
+        <a href="~/Admin/Index">
+            <img src="~/IMG/Logo/logosite.png" alt="Alternate Text" style="padding-right: 40px; padding-left: 40px;" />
+        </a>
+        <a href="~/Admin/Loaisanpham"><b>QUẢN LÝ LOẠI SẢN PHẨM</b></a>
+    </div>
+    <div class="container body-content" style="min-height:500px">
+        <div class="row" style="width:100%; padding-left:0;">
+            <div class="col-md-3 col-sm-4 modal-body">
+                <div class="list">
+                    <h3 class="list-header">Sản phẩm buôn</h3>
+                    <ul class="list-body list-group list-group-flush">
+                        <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/1">Thịt cừu Úc</a></li>
+                        <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/2">Cá hồi Na uy</a></li>
+                        <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/3">Thịt bò Mỹ</a></li>
+                        <li>
+                            <i class="fa fa-chevron-right"></i><a href="~/Products/Index/4">Thịt bò Úc</a>
+                            <ul class="list-children">
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/9">Thịt bò Úc tươi</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/10">Thịt bò Úc đông lạnh</a></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/5">Cá ngừ</a></li>
+                    </ul>
+                </div>
+
+                <div class="list">
+                    <h3 class="list-header">Bán lẻ</h3>
+                    <ul class="list-body list-group list-group-flush">
+                        <li>
+                            <i class="fa fa-chevron-right"></i><a href="~/Products/Index/6">Thịt và cá nhập khẩu</a>
+                            <ul class="list-children">
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/11">Thịt bò tươi</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/12">Cá ngừ phi lê</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/13">Thịt cừu</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/14">Thủy hải sản</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/15">Thịt bò đông lạnh</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/16">Cá hồi</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/17">Cá trích</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="fa fa-chevron-right"></i><a href="~/Products/Index/7">Sốt &amp; gia vị</a>
+                            <ul class="list-children">
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/18">Sốt gia vị Âu Mỹ</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/19">Sốt gia vị Hàn Quốc</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/20">Sốt gia vị Nhật Bản</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="fa fa-chevron-right"></i><a href="~/Products/Index/8">Thực phẩm</a>
+                            <ul class="list-children">
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/21">Thực phẩm nhập khẩu</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Index/23">Bánh kẹo &amp; bơ sữa</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-9 col-sm-4">@RenderBody()</div>
+        </div>
+    </div>
+    <div class="footer py-4 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-3">
+                    <h3 class="modal-header">LIÊN HỆ</h3>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:freshfood@gmail.com">  freshfood@gmail.com</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:0123456789">  0123456789</a>
+                    </p>
+                    <p style="color:lightgray">
+                        <i class="fas fa-map-marker-alt"></i>
+                        475B Điên Biên Phủ, P.25, Bình Thạnh, TP.HCM
+                    </p>
+                </div>
+                <div class="col-sm-4 col-md-3">
+                    <h3 class="modal-header">TRỢ GIÚP NHANH</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i><a href="#"> Hướng dẫn thanh toán</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="#"> Hướng dẫn mua hàng</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/LienHe"> Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3">
+                    <h3 class="modal-header">CHÍNH SÁCH BÁN HÀNG</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/chinhsachchung"> Chính sách và quy định chung</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/chinhsachvanchuyen"> Chính sách vận chuyển</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/chinhsachdoitra"> Chính sách đổi trả hàng</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/chinhsachbaomat"> Chính sách bảo mật thông tin</a></li>
+                    </ul>
+                </div>
+                <div class="fb-page col-sm-4 col-md-3" data-href="https://www.facebook.com/freshfoodsthucphamsachTP/" data-tabs="" data-width="100%" data-height="auto" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/freshfoodsthucphamsachTP/" class="fb-xfbml-parse-ignore">
+                        <a target="_blank" href="https://www.facebook.com/freshfoodsthucphamsachTP/">Fresh Foods  Thực Phẩm Sạch Thương Mại T&amp;P</a>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright bg-danger py-3 text-center text-white" style="height: 50px; line-height: 30px;">
+        <div>
+            &copy; @DateTime.Now.Year - Bản quyền thuộc về Team DAUCATMOI
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundle/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

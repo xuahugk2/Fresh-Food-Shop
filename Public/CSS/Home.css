@@ -1,0 +1,44 @@
+﻿body {
+}
+
+.back-khuyenmai{
+    background-image: url(../IMG/Policy/khuyen-mai.jpg);
+    width:100px;
+    height:100px;
+}
+
+.policy{
+    text-align:center;
+    margin:10px;
+}
+.lala {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 269px;
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold
+}
+
+.lala:hover .overlay {
+    opacity: 1;
+}

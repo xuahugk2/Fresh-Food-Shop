@@ -1,0 +1,96 @@
+﻿@model LAPTRINHWEB.Models.Products
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align: center"><strong> XÓA SẢN PHẨM</strong></h2>
+
+<h3 style="text-align: center">Bạn có chắc muốn xóa sản phẩm này ?</h3>
+<div style="margin-left: 80px;">
+    <hr />
+    <table>
+        <thead>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.CatId)</th>
+                <th style="border:1px solid black; padding:16px;  width: 400px;">@Html.DisplayFor(m => m.CatId)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Name)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Name)</th>
+            </tr>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Slug)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Slug)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Detail)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Detail)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.PriceBuy)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.PriceBuy)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Img)</th>
+                <th style="border:1px solid black; padding:16px;"><img src="~/IMG/Products/@Model.Img" alt="Alternate Text" width="400px;" height="200px;" /></th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.MetaKey)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.MetaKey)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.MetaDesc)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.MetaDesc)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Created_By)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Created_By)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Created_At)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Created_At)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Updated_By)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Updated_By)</th>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayNameFor(m => m.Status)</th>
+                <th style="border:1px solid black; padding:16px;">@Html.DisplayFor(m => m.Status)</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div style="margin-top: 30px; margin-left: 130px;">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color" style="margin-left: 150px">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Sanpham")
+        </div>
+    }
+</div>

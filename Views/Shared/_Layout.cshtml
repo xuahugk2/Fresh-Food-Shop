@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <link href="~/Public/CSS/all.min.css" rel="stylesheet" />
+    <link href="~/Public/CSS/Site.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/01ec9d7b95.js" crossorigin="anonymous"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0" nonce="5lzUFqdH"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="head">
+        <div class="col-md-3" style="padding-right: 0px;">            
+            <a href="tel:18006866"><i class="fa fa-phone"></i> 18006866</a>            
+            <a href="mailto:freshfood@gmail.com"><i class="fa fa-envelope"></i> freshfood@gmail.com</a>
+
+        </div>
+        <div class="col-md-3">
+            <form action="/Products/Find" method="post">
+                <input class="btn" type="text" name="name" id="name" placeholder="Tên sản phẩm cần tìm" />
+                <input class="btn btn-default" type="submit" value="Tìm kiếm" />               
+            </form>
+        </div>
+        <div class="col-md-3">            
+            <a target="_blank" href="https://www.facebook.com/freshfoodsthucphamsachTP/"><i class="fa fa-facebook"></i> Facebook</a>          
+            <a target="_blank" href="https://www.youtube.com/channel/UCov8stz5gsTSaQfrNH08QcA"><i class="fa fa-youtube"></i> Youtube</a>
+        </div>
+        <div class="col-md-3">
+            <a href="~/Home/dangnhap">Đăng nhập</a>
+            <a href="~/Home/dangky">Đăng ký</a>
+            <a href="~/Home/GioHang">Giỏ Hàng</a>
+        </div>
+
+    </div>
+    <div class="menu">
+        <a href="~/Home/Index"><img src="~/IMG/Logo/logosite.png" alt="Alternate Text" style="padding-left:0" /></a>
+        <ul>
+            <li>
+                <a href="~/Products/Index/0" class="btn btn-dropbtn">Sản phẩm buôn<i class="fa fa-angle-down"></i></a>
+                <div class="sub-menu">
+                    <ul>
+                        <li><a href="~/Products/Group/1">Thịt cừu Úc</a></li>
+                        <li><a href="~/Products/Group/2">Cá hồi Na Uy</a></li>
+                        <li><a href="~/Products/Group/3">Thịt bò Mỹ</a></li>
+                        <li><a href="~/Products/Group/4">Thịt bò Úc</a></li>
+                        <li><a href="~/Products/Group/5">Cá ngừ</a></li>
+                    </ul>
+
+                </div>
+            </li>
+            <li>
+                <a href="~/Products/Index/0" class="btn btn-dropbtn">Bán lẻ<i class="fa fa-angle-down"></i></a>
+                <div class="sub-menu">
+                    <ul>
+                        <li><a href="~/Products/Group/6">Thịt cá nhập</a></li>
+                        <li><a href="~/Products/Group/7">Sốt & Gia vị</a></li>
+                        <li><a href="~/Products/Group/8">Thực phẩm</a></li>                      
+                    </ul>
+                </div>
+            </li>
+            <li><a href="~/Home/Vieclam" class="btn btn-dropbtn">Việc làm</a></li>
+            <li><a href="~/Home/Camnangsudung" class="btn btn-dropbtn">Cẩm nang sử dụng</a></li>
+            <li><a href="~/Home/Tintuc" class="btn btn-dropbtn">Tin tức</a></li>
+            <li><a href="~/Home/GioiThieu" class="btn btn-dropbtn">Giới thiệu</a></li>
+            <li><a href="~/Home/LienHe" class="btn btn-dropbtn">Liên hệ</a></li>           
+        </ul>
+    </div>
+
+    <div class="container body-content" style="min-height:500px">
+        <div class="row" style="width:100%; padding-left:0;">
+            <div class="col-md-3 col-sm-4 modal-body">
+                <div class="list">
+                    <h3 class="list-header"><a href="~/Products/Index/0">Sản phẩm buôn</a></h3>
+                    <ul class="list-body list-group list-group-flush">
+                        <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/1">Thịt cừu Úc</a></li>
+                        <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/2">Cá hồi Na uy</a></li>
+                        <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/3">Thịt bò Mỹ</a></li>
+                        <li>
+                            <i class="fa fa-chevron-right"></i><a href="~/Products/Group/4">Thịt bò Úc</a>
+                            <ul class="list-children">
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/9">Thịt bò Úc tươi</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/10">Thịt bò Úc đông lạnh</a></li>
+                            </ul>
+                        </li>
+                        <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/5">Cá ngừ</a></li>
+                    </ul>
+                </div>
+
+                <div class="list">
+                    <h3 class="list-header"><a href="~/Products/Index/0">Bán lẻ</a></h3>
+                    <ul class="list-body list-group list-group-flush">
+                        <li>
+                            <i class="fa fa-chevron-right"></i><a href="~/Products/Group/6">Thịt và cá nhập khẩu</a>
+                            <ul class="list-children">
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/11">Thịt bò tươi</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/12">Cá ngừ phi lê</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/13">Thịt cừu</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/14">Thủy hải sản</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/15">Thịt bò đông lạnh</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/16">Cá hồi</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/17">Cá trích</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="fa fa-chevron-right"></i><a href="~/Products/Group/7">Sốt &amp; gia vị</a>
+                            <ul class="list-children">
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/18">Sốt gia vị Âu Mỹ</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/19">Sốt gia vị Hàn Quốc</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/20">Sốt gia vị Nhật Bản</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <i class="fa fa-chevron-right"></i><a href="~/Products/Group/8">Thực phẩm</a>
+                            <ul class="list-children">
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/21">Thực phẩm nhập khẩu</a></li>
+                                <li><i class="fa fa-chevron-right"></i><a href="~/Products/Group/23">Bánh kẹo &amp; bơ sữa</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-9 col-sm-4">@RenderBody()</div>
+        </div>
+    </div>
+
+
+    <div class="footer py-4 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-3">
+                    <h3 class="modal-header">LIÊN HỆ</h3>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:freshfood@gmail.com">  freshfood@gmail.com</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:0123456789">  0123456789</a>
+                    </p>
+                    <p style="color:lightgray">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://www.google.com/maps/place/Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+C%C3%B4ng+ngh%E1%BB%87+TP.HCM/10.8017332,106.712303,17z/data=!3m1!4b1!4m5!3m4!1s0x317528a459cb43ab:0x6c3d29d370b52a7e!8m2!3d10.8017279!4d106.7144917?hl=vi-VN">475B Điên Biên Phủ, P.25, Bình Thạnh, TP.HCM</a>
+
+                    </p>
+                </div>
+                <div class="col-sm-4 col-md-3">
+                    <h3 class="modal-header">TRỢ GIÚP NHANH</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/Huongdanthanhtoan"> Hướng dẫn thanh toán</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/Huongdanmuahang"> Hướng dẫn mua hàng</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/LienHe"> Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-4 col-md-3">
+                    <h3 class="modal-header">CHÍNH SÁCH BÁN HÀNG</h3>
+                    <ul>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/chinhsachchung"> Chính sách và quy định chung</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/chinhsachvanchuyen"> Chính sách vận chuyển</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/chinhsachdoitra"> Chính sách đổi trả hàng</a></li>
+                        <li><i class="fas fa-chevron-right"></i><a href="~/Home/chinhsachbaomat"> Chính sách bảo mật thông tin</a></li>
+                    </ul>
+                </div>
+                <div class="fb-page col-sm-4 col-md-3" data-href="https://www.facebook.com/freshfoodsthucphamsachTP/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/freshfoodsthucphamsachTP/" class="fb-xfbml-parse-ignore">
+                        <a href="https://www.facebook.com/freshfoodsthucphamsachTP/">Fresh Foods  Thực Phẩm Sạch Thương Mại T&amp;P</a>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright py-3 text-center" style="height: 50px; line-height: 50px; font-size: 17px; margin-bottom: 0">
+        <div>
+            &copy; @DateTime.Now.Year - Bản quyền thuộc về Team DAUCATMOI || Cung cấp bởi Team DAUCATMOI
+        </div>
+    </div>
+    <style>
+        .head a:hover{
+            text-decoration: none;
+            color: #65f718;
+        }
+        .copyright {
+            background-color: forestgreen;
+            color: white;
+        }   
+        .menu .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .menu {
+            position: relative;
+            display: inline-block;
+        }
+        .menu .sub-menu {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+            .sub-menu a {
+                color: black;               
+                text-decoration: none;
+                display: block;
+                padding: 12px 16px;
+            }
+                .sub-menu a:hover .sub-menu{
+                    background-color: #f1f1f1;
+                    display: block;
+                }
+                .container .list-header a:hover{
+                    text-decoration: none;
+                    color: #4CAF50
+                }
+        
+    </style>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundle/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<LAPTRINHWEB.Models.Posts>
+@{
+    ViewBag.Title = "Tin tức";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align: center; color: green; font-weight: bold">TIN TỨC</h2>
+@foreach (var item in Model)
+{
+    <div class="haha col-sm-12">
+        <hr />
+        <div class="entry-header has-post-format">
+            <h3>
+                <a style="color:forestgreen ; font-weight: bold" href="http://freshfoods.vn/ha-noi-long-bien--freshfoods-tuyen-dung-chuyen-vien-kinh-doanh.html" itemprop="url">@item.Title</a>
+                <a class="label label-info"> @item.Created_At</a>
+            </h3>
+        </div>
+        <img src="~/IMG/Posts/@item.Img" alt="Alternate Text" style="max-width: 1000px"/>
+        <h4>@item.Detail</h4>
+        <div style="margin-top: 5px">
+            <p class="readmore">
+                <a class="btn btn-success" href="http://freshfoods.vn/" itemprop="url">Xem thêm ...</a>
+            </p>
+        </div>
+    </div>
+}
+<style>
+   .haha a:hover{
+       text-decoration: none;
+   }
+</style>

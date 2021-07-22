@@ -1,0 +1,78 @@
+﻿@using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder
+@using System.Web.UI.WebControls
+@using LAPTRINHWEB.Models;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<Categorys>
+@{
+    ViewBag.Title = "Loaisanpham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align : center"><strong>QUẢN LÝ THÔNG TIN LOẠI SẢN PHẨM</strong></h2>
+
+<form action="~/Admin/taomoi" style="margin-bottom: 20px; margin-top: 60px;">
+    <input class="btn-primary" type="submit" value="Thêm loại sản phẩm mới" />
+</form>
+
+<table class="table" border="2px;" width="1000px;">
+    <tr style="background-color: #04AA6D">
+        <th>
+            ID
+        </th>
+        <th>
+            Tên loại sản phẩm
+        </th>
+        <th>
+            Số sản phẩm
+        </th>
+        <th>
+            Ngày tạo
+        </th>
+        <th>
+            Cập nhật
+        </th>
+        <th>
+            Chức năng
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td style="text-align: center">
+                @Html.DisplayFor(modelItem => item.Orders)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created_At)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Updated_At)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "chinhsua", new { id = item.Id }) | <br />
+                @Html.ActionLink("Chi tiết", "chitiet", new { id = item.Id }) | <br />
+                @Html.ActionLink("Xóa", "xoa", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@*
+    @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+*@
+
+<div class="MenuTrang" style="text-align: center">
+    @Html.PagedListPager(Model, page1 => Url.Action("Loaisanpham", new { page1 = page1 }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

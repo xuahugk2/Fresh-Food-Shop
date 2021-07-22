@@ -1,0 +1,214 @@
+﻿body {
+    margin-top: 0px;
+}
+
+* {
+    margin:0;
+    padding: 0;
+}
+.head {
+    margin-top: 0px;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background-color: lightsalmon;
+    font-size: 15px;
+    color: white;
+    text-align: center
+}
+.head a {
+    font-size: 25px;
+    color: gray;
+}
+.head a:hover {
+    text-decoration: none;
+    color: lawngreen;
+}
+.container {
+    
+}
+.form-tt {
+    width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 55px 55px 37px;
+    background: darkkhaki;
+    text-align: center;
+    margin-left: 35%;
+    
+}
+
+.form-tt h2 {
+    font-size: 30px;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.form-tt input[type=text], .form-tt input[type=password] {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    display: block;
+    width: calc(100% - 10px);
+    height: 45px;
+    background: 0 0;
+    padding: 10px 0;
+    border-bottom: 2px solid rgba(255,255,255,.24) !important;
+    border: 0;
+    outline: 0;
+}
+
+.form-tt input[type=text]::focus, .form-tt input[type=password]::focus {
+    color: red;
+}
+
+.form-tt input[type=password] {
+    margin-bottom: 20px;
+}
+
+.form-tt input::placeholder {
+    color: #fff;
+}
+
+.checkbox {
+    display: block;
+}
+
+.form-tt input[type=submit] {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.2;
+    padding: 0 20px;
+    min-width: 120px;
+    height: 50px;
+    border-radius: 25px;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    border: 0;
+    outline: 0;
+    display: block;
+    margin: 30px auto;
+}
+
+#checkbox {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.checkbox-text {
+    color: #fff;
+}
+
+.psw-text {
+    color: #fff;
+}
+
+.footer {
+    background-color: dimgray;
+    background: #58585a;
+    font-family: 'Times New Roman';
+    background-image: url(../IMG/footer_background.png)
+}
+
+.footer p i {
+    color: lightgray;
+    font-size: 16px;
+}
+
+.footer p a {
+    color: lightgray;
+    font-size: 16px;
+}
+
+.footer p a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.footer h3 {
+    font-size: 20px;
+    color: lightgray;
+    padding: 0;
+}
+
+.footer ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.footer ul li i {
+    color: lightgray;
+}
+
+.footer ul li a {
+    list-style: none;
+    color: lightgray;
+}
+
+.footer ul li a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+.card-fixed {
+    width: 30%;
+    float: left;
+    margin-right: 3%
+}
+
+.list {
+    margin-bottom: 70px;
+}
+
+.list-header {
+    color: black;
+    text-decoration: none;
+    padding: 0 0;
+    border-bottom: 2px double forestgreen;
+}
+
+.list-body {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.list-body .fa {
+    margin-right: 5px;
+}
+
+.list-body li, .list-children li {
+    padding-top: 20px
+}
+
+.list-body li a {
+    color: black;
+}
+
+.list-children {
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+.list-body li a:hover, .list-children li a:hover {
+    text-decoration: none;
+    color: lawngreen;
+}
+
+.sidebar {
+}
+
+.sidebar h3 {
+    width: 250px;
+    color: black
+}
+
+
+

@@ -1,0 +1,153 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.head {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    background-color: forestgreen;
+    font-size: 15px;
+    color: white;
+    text-align: center
+}
+
+    .head .fa {
+        margin-right: 5px;
+    }
+
+    .head a {
+        padding-right: 5%;
+        color: white;
+    }
+
+        .head a:hover {
+            text-decoration: none;
+            color: lawngreen;
+            cursor: pointer;
+        }
+
+
+
+
+.footer {
+    background-color: dimgray;
+    background: #58585a;
+    font-family: 'Times New Roman';
+    background-image: url(../IMG/footer_background.png);
+    display: block;
+}
+
+    .footer p i {
+        color: lightgray;
+        font-size: 16px;
+    }
+
+    .footer p a {
+        color: lightgray;
+        font-size: 16px;
+    }
+
+        .footer p a:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+    .footer h3 {
+        font-size: 20px;
+        color: lightgray;
+        padding: 0;
+    }
+
+    .footer ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+        .footer ul li i {
+            color: lightgray;
+        }
+
+        .footer ul li a {
+            list-style: none;
+            color: lightgray;
+        }
+
+            .footer ul li a:hover {
+                color: white;
+                text-decoration: none;
+            }
+
+
+.card-fixed {
+    width: 30%;
+    float: left;
+    margin-right: 3%
+}
+
+.list {
+    margin-bottom: 70px;
+}
+
+.list-header {
+    color: black;
+    text-decoration: none;
+    padding: 0 0;
+    border-bottom: 2px double forestgreen;
+}
+
+.list-body {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+    .list-body .fa {
+        margin-right: 5px;
+    }
+
+    .list-body li, .list-children li {
+        padding-top: 20px
+    }
+
+        .list-body li a {
+            color: black;
+        }
+
+.list-children {
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+    .list-body li a:hover, .list-children li a:hover {
+        text-decoration: none;
+        color: lawngreen;
+    }
+
+.sidebar {
+}
+
+    .sidebar h3 {
+        width: 250px;
+        color: black
+    }

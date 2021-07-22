@@ -1,0 +1,13 @@
+﻿body {
+}
+
+.back-khuyenmai{
+    background-image: url(../IMG/Policy/khuyen-mai.jpg);
+    width:100px;
+    height:100px;
+}
+
+.policy{
+    text-align:center;
+    margin:10px;
+}

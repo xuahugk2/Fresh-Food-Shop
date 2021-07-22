@@ -1,0 +1,37 @@
+﻿@using LAPTRINHWEB.Models
+@model List<GioHang>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center;">THÔNG TIN GIỎ HÀNG</h2>
+
+<table align="center" border="1" width="100%">
+    <tr style="text-align:center;font-weight: bold">
+        <td>Mã sản phẩm</td>
+        <td>Tên sản phẩm</td>
+        <td>Hình ảnh</td>
+        <td>Số lượng</td>
+        <td>Đơn giá</td>
+        <td>Thành tiền</td>
+    </tr>
+    @foreach (var item in Model) 
+    {
+        <tr style="text-align: center; font-weight: bold">
+            <td>@item.Masp</td>
+            <td>@item.Tensp</td>
+            <td><img src="~/IMG/Products/@item.Hinhanh" alt="Alternate Text" width="200px" height="150px"/></td>
+            <td>@item.Soluong</td>
+            <td>@String.Format("{0:0,0}", item.Dongia)</td>
+            <td>@String.Format("{0:0,0}", item.Thanhtien)</td>
+            <td><a href="@Url.Action("Details","Products", new { id = item.Masp })">Chi tiết</a></td>
+            <td>@Html.ActionLink("Xóa","Xoagiohang", new { @Masp = item.Masp })</td>
+        </tr>
+    }
+    <tr style="font-weight: bold; text-align: right; color: red;">
+        <td colspan="3">Số lượng sp: @ViewBag.Tongsoluong</td>
+        <td colspan="3">Tổng tiền: @String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ</td>
+    </tr>
+    <
+</table>
