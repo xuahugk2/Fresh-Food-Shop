@@ -21,7 +21,7 @@
 <tr style="text-align: center; font-weight: bold">
     <td><img src="~/IMG/Products/@item.Hinhanh" alt="Alternate Text" width="140" /></td>
     <td width="200px">@item.Tensp</td>
-    @using (Html.BeginForm("Capnhatgiohang", "Home", new { @Masp = item.Masp }))
+    @using (Html.BeginForm("Capnhatgiohang", "Carts", new { @Masp = item.Masp }))
     {
         <td>@String.Format("{0:0,0}", item.Dongia)</td>
         <td><input max="20" min="1" name="txtSoluong" type="number" value="@item.Soluong"></td>
@@ -30,7 +30,7 @@
 
         <td width="50px"><a href="@Url.Action("Details","Products", new { id = item.Masp })" class="btn btn-success"><i class="fa fa-edit"></i></a></td>
 
-        <td width="50px"><a href="@Url.Action("Xoadonhang","Home", new { @Masp = item.Masp })" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
+        <td width="50px"><a href="@Url.Action("Xoadonhang","Carts", new { @Masp = item.Masp })" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
 
         <td><input class="btn btn-success" type="submit" value="Cập nhật" /></td>
     }
@@ -45,7 +45,7 @@
 <div class="row" style="margin-top: 10px; margin-left: 10px">  
     <div>
         <a href="~/Products/Index/0" class="btn btn-warning" style="float: left"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>     
-        <a href="~/Home/Thanhtoan" class="btn btn-success" style="float:right;">Thanh toán <i class="fa fa-angle-right"></i></a>
+        <a href="~/Carts/Thanhtoan" class="btn btn-success" style="float:right;">Thanh toán <i class="fa fa-angle-right"></i></a>
     </div>
 </div>
 

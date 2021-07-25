@@ -27,7 +27,7 @@
                         @Html.ActionLink("Giá liên hệ", "LienHe", "Home")
                     }
                 </p>
-                <a style="width:100%" href="@Url.Action("Themgiohang","Home", new { @Masp = item.Id, @strUrl = Request.Url.ToString()})" class="btn btn-primary">Mua hàng</a>
+                <a style="width:100%" href="@Url.Action("Themgiohang","Carts", new { @Masp = item.Id, @strUrl = Request.Url.ToString()})" class="btn btn-primary">Mua hàng</a>
             </div>
         </div>
     }

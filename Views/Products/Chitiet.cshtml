@@ -50,7 +50,7 @@
 </div>
 <div class="row" style="margin-top: 10px; margin-left: 10px">
     <div class="col-md-6" style="margin-left: 100px"> <a href="~/Products/Index/0" class="btn btn-warning" style="font-weight: bold"><i class="fa fa-angle-left"></i> Xem thêm sản phẩm</a></div>
-    <div class="col-md-2"> <a style="width:100%" href="@Url.Action("Themgiohang","Home", new { @Masp = Model.Id, @strUrl = Request.Url.ToString()})" class="btn btn-primary"> Mua hàng <i class="fa fa-angle-right"></i></a></div>
+    <div class="col-md-2"> <a style="width:100%" href="@Url.Action("Themgiohang","Carts", new { @Masp = Model.Id, @strUrl = Request.Url.ToString()})" class="btn btn-primary"> Mua hàng <i class="fa fa-angle-right"></i></a></div>
 </div>
 
 

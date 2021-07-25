@@ -87,7 +87,7 @@
                         <div class="col-sm-4 col-md-6 card-text" style="font-size:18px; text-decoration:line-through"> <strong>@item.Products.PriceBuy VNĐ</strong> </div>
                         <div class="col-sm-4 col-md-6 card-text" style="color: red; font-size: 18px;">@item.PriceSale VNĐ</div>
                     </div>
-                    <a style="width:100%" href="@Url.Action("Themgiohang","Home", new { @Masp = item.ProductId, @strUrl = Request.Url.ToString()})" class="btn btn-primary">Mua hàng</a>
+                    <a style="width:100%" href="@Url.Action("Themgiohang","Carts", new { @Masp = item.ProductId, @strUrl = Request.Url.ToString()})" class="btn btn-primary">Mua hàng</a>
                 </div>
             </div>
         }
