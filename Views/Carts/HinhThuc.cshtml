@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "HinhThuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Chọn hình thức thanh toán</h1>
+<br />
+<form method="post" action="/Carts/ThanhToan">
+    <input class="check_cart" type="radio" id="momo" name="hinh_thuc" value="Momo">
+    <img class="img_cart" for="momo" src="~/IMG/Payments/momo.png" />
+    <br>
+
+    <input class="check_cart" type="radio" id="visa" name="hinh_thuc" value="Visa">
+    <img class="img_cart" for="visa" src="~/IMG/Payments/visa.png" />
+    <br>
+
+    <input type="submit" value="Thanh toán" class="btn btn-success"/>
+</form>
+
+
+
+
+<style>
+    .img_cart {
+        width: 100px;
+        padding-bottom: 10px;
+    }
+
+    .check_cart {
+        width: 40px;
+    }
+</style>
+

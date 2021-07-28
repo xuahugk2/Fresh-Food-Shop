@@ -1,0 +1,120 @@
+﻿@{  ViewBag.Title = "Thanh toán";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+<h1>ĐÂY LÀ TRANG THANH TOÁN</h1>
+
+
+<body>
+    <div>
+        <h2>Thông tin khách hàng</h2>
+
+        <form name="checkoutAlepay" class="form" id="formSubmit" method="post" action="/Carts/VisaPay?action=sendOrderToAlepay">
+
+            <div class="form-group col-sm-5">
+                <label class="control-label">Tổng Tiền <span class="require">(*)</span></label>
+                <input runat="server" type="text" class="form-control" name="amount" id="amount" value=@ViewBag.Tongtien />
+            </div>
+
+            <div class="form-group col-sm-5">
+                <label class="control-label">Số Lượng <span class="require">(*)</span></label>
+                <input runat="server" type="text" readonly=readonly placeholder="Số Lượng" class="form-control" name="totalItem" id="totalItem" value="1" />
+            </div>
+            <div class="form-group col-sm-5">
+                <label class="control-label">Email <span class="require">(*)</span></label>
+                <input runat="server" type="text" value="hung@gmail.com" placeholder="Email" class="form-control" name="buyerEmail" id="buyerEmail" required=required />
+            </div>
+            <!-- Text input-->
+            <div class="form-group col-sm-5">
+                <label class="control-label">Tiền Tệ <span class="require">(*)</span></label>
+                <select runat="server" name="currency" id="currency" class="form-control">
+                    <option value="VND" selected=selected>VND</option>
+                    <option value="USD">USD</option>
+                </select>
+            </div>
+
+
+
+            <!-- Text input-->
+            <div class="form-group col-sm-5">
+                <label class="control-label">Họ Tên <span class="require">(*)</span></label>
+                <input runat="server" type="text" value="Hung" placeholder="Tên" class="form-control" name="buyerName" id="buyerName" required=required />
+            </div>
+
+            <div class="form-group col-sm-5">
+                <label class="control-label">Số Điện Thoại <span class="require">(*)</span></label>
+                <input runat="server" type="text" value="0123456789" placeholder="Số Điện Thoại" class="form-control" name="buyerPhone" id="buyerPhone" required=required />
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group col-sm-5">
+                <label class="control-label">Địa Chỉ <span class="require">(*)</span></label>
+                <input runat="server" type="text" value="48 UNG VĂN KHIÊM" placeholder="Địa Chỉ" class="form-control" name="buyerAddress" id="buyerAddress" required=required />
+            </div>
+
+            <div class="form-group col-sm-5">
+                <label class="control-label">Quốc gia<span class="require">(*)</span></label>
+                <input runat="server" type="text" value="Việt Nam" placeholder="" class="form-control" name="buyerCountry" id="buyerCountry" required=required />
+            </div>
+            <div class="form-group col-sm-5">
+                <label class="control-label">Thành Phố <span class="require">(*)</span></label>
+                <input runat="server" type="text" placeholder="Thành Phố" class="form-control" name="buyerCity" id="buyerCity" required=required value="Hà Nội" />
+            </div>
+            <!-- Text input-->
+            <div class="form-group col-sm-5">
+                <label class="control-label" for="orderDescription">Mô Tả Hóa Đơn<span class="require">(*)</span></label>
+                <textarea runat="server" placeholder="Thông Tin Mô Tả Hóa Đơn" id="orderDescription" name="orderDescription" class="form-control" required="">Mua trả góp Iphone 6 16G</textarea>
+            </div>
+
+
+
+            <div class="row">
+                <input id="action" name="action" type="hidden" value="sendOrderToApay"/>
+            </div>
+
+            <div class="col-sm-10" id="alert">
+                <!--   <div runat="server" id="showresultErrors" class="alert alert-danger"></div>-->
+            </div>
+
+            
+                <div class="form-group col-sm-5">
+                    <p>&nbsp;</p>
+                    <button id="sendInstallment" type="submit" class="btn btn-info btn-lg">Thanh toán</button>
+                
+            </div>
+        </form>
+    </div>
+    
+    <div id="sendOrderToAlepayInstallment" class="modal fade in" role="dialog" runat="server">
+        <iframe id="frame" scrolling="no" style="overflow: hidden;height: 100%;width: 100%;border: none;"></iframe>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    @*<script type="text/javascript">
+        $('#sendInstallment').on('click', function () {
+            $('#alert').html('Vui lòng chờ ít phút...');
+            $.ajax({
+                type: "POST",
+                url: $("#formSubmit").prop('action'),
+                data: $("#formSubmit").serialize(), // serializes the form's elements.
+                success: function (data) {
+                    console.log(data.errorCode);
+                    if (typeof data.errorCode != 'undefined' || data.checkoutUrl == '') {
+                        $('#alert').html('<div class="alert alert-danger">' + data.errorDescription + '</div>');
+                        return false;
+                    } else {
+                        $('#frame').prop('src', data.checkoutUrl);
+                        $('#sendOrderToAlepayInstallment').modal('show');
+                        $('#alert').html('');
+                    }
+
+                }
+            });
+            return false;
+        });
+        $('#frame').on('load', function () {
+            this.style.height = this.contentDocument.body.scrollHeight + 'px';
+        });
+    </script>*@
+</body>

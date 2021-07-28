@@ -227,6 +227,7 @@
     <Compile Include="Models\Orders.cs">
       <DependentUpon>FreshFoodDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PayClass.cs" />
     <Compile Include="Models\Posts.cs">
       <DependentUpon>FreshFoodDbContext.tt</DependentUpon>
     </Compile>
@@ -301,6 +302,8 @@
     <Content Include="IMG\khuyen-mai-freshfoods.jpg" />
     <Content Include="IMG\Logo\logo.png" />
     <Content Include="IMG\Logo\logosite.png" />
+    <Content Include="IMG\Payments\momo.png" />
+    <Content Include="IMG\Payments\visa.png" />
     <Content Include="IMG\Posts\tintuc1.jpg" />
     <Content Include="IMG\Posts\tintuc10.jpg" />
     <Content Include="IMG\Posts\tintuc2.jpg" />
@@ -494,6 +497,8 @@
     <Content Include="Views\Carts\GioHang.cshtml" />
     <Content Include="Views\Carts\GioHangPartial.cshtml" />
     <Content Include="Views\Carts\Thanhtoan.cshtml" />
+    <Content Include="Views\Carts\HinhThuc.cshtml" />
+    <Content Include="Views\Carts\Visa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
