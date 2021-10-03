@@ -65,6 +65,7 @@ namespace LAPTRINHWEB.Controllers
             }
             return tongtien;
         }
+
         public ActionResult GioHang()
         {
             List<GioHang> listGiohang = Laygiohang();
@@ -107,49 +108,29 @@ namespace LAPTRINHWEB.Controllers
             }
             return RedirectToAction("GioHang");
         }
-        public ActionResult Thanhtoan(FormCollection f)
+        public ActionResult KetQua(FormCollection f)
         {
-            string form = f["hinh_thuc"];
-            if(form == "Momo")
+            try
             {
                 Payment.ThanhToan(Tongtien());
-                return RedirectToAction("Index", "Home");
+                ViewBag.Message = "Thành công!";
+                return View();
             }
-            else if(form == "Visa")
+            catch
             {
-                return View("Visa");
+                ViewBag.Message = "Thất bại!";
+                return View();
             }
-            return RedirectToAction("HinhThuc");
         }
 
         public ActionResult HinhThuc()
         {
-            ViewBag.Tongtien = Tongtien();
-            return View();
+            return View();     
         }
 
-        public ActionResult Visa()
+        public ActionResult Visa(FormCollection f)
         {
-            ViewBag.Tongtien = Tongtien().ToString();
             return View();
-
-        }
-
-        public ActionResult VisaPay(object sender, EventArgs e)
-        {
-            if (Request.Form["action"] == "sendOrderToApay")
-            {
-                Response.Clear();
-                Response.AddHeader("Content-type", "text/json");
-                var rs = this.SendOrdertToAlepay();
-                Response.Write(rs);
-                Response.End();
-                return View("ThanhToan");
-            }
-            else
-            {
-                return RedirectToAction("Visa");
-            }
         }
 
         public string SendOrdertToAlepay()
@@ -166,15 +147,14 @@ namespace LAPTRINHWEB.Controllers
             rq.buyerCity = Request.Form["buyerCity"];
             rq.buyerCountry = Request.Form["buyerCountry"];
 
-
             rq.orderCode = DateTime.Now.ToString("Mdyyyy");
             rq.checkoutType = "1"; // Thanh toán
             rq.allowDomestic = false;// Thanh toán bằng thẻ nội địa
             rq.paymentHours = "48";
             rq.installment = false;
             string baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
-            rq.returnUrl = baseUrl + "/Carts/ThanhToan";
-            rq.cancelUrl = baseUrl + "/Carts/VisaPay";
+            rq.returnUrl = baseUrl + "/Carts/KetQua";
+            rq.cancelUrl = baseUrl + "/Carts/Visa";
             var result = Alepay.sendOrderToAlepay(rq);
             return result;
 

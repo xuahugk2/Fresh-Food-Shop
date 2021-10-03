@@ -250,7 +250,21 @@
       <DependentUpon>FreshFoodDbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="result.aspx.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="result.aspx.designer.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="thanh-toan.aspx.cs">
+      <DependentUpon>thanh-toan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="thanh-toan.aspx.designer.cs">
+      <DependentUpon>thanh-toan.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ThanhToan\MoMoSecurity.cs" />
     <Compile Include="ThanhToan\Payment.cs" />
     <Compile Include="ThanhToan\PaymentRequest.cs" />
@@ -303,7 +317,8 @@
     <Content Include="IMG\Logo\logo.png" />
     <Content Include="IMG\Logo\logosite.png" />
     <Content Include="IMG\Payments\momo.png" />
-    <Content Include="IMG\Payments\visa.png" />
+    <Content Include="IMG\Payments\visa.svg" />
+    <Content Include="IMG\Payments\visapay.png" />
     <Content Include="IMG\Posts\tintuc1.jpg" />
     <Content Include="IMG\Posts\tintuc10.jpg" />
     <Content Include="IMG\Posts\tintuc2.jpg" />
@@ -407,6 +422,7 @@
     <Content Include="Public\CSS\all.min.css" />
     <Content Include="Public\CSS\Home.css" />
     <Content Include="Public\CSS\Site.css" />
+    <Content Include="result.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\FreshFoodDbContext.edmx">
@@ -427,6 +443,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="thanh-toan.aspx" />
     <Content Include="video\video.mp4" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -496,9 +513,9 @@
     <Content Include="Views\Products\Chitiet.cshtml" />
     <Content Include="Views\Carts\GioHang.cshtml" />
     <Content Include="Views\Carts\GioHangPartial.cshtml" />
-    <Content Include="Views\Carts\Thanhtoan.cshtml" />
     <Content Include="Views\Carts\HinhThuc.cshtml" />
     <Content Include="Views\Carts\Visa.cshtml" />
+    <Content Include="Views\Carts\KetQua.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

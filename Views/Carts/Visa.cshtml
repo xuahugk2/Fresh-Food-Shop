@@ -1,16 +1,17 @@
-﻿@{  ViewBag.Title = "Thanh toán";
+﻿@{ ViewBag.Title = "Thanh toán";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+}
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <h1>ĐÂY LÀ TRANG THANH TOÁN</h1>
 
-
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <body>
     <div>
         <h2>Thông tin khách hàng</h2>
 
-        <form name="checkoutAlepay" class="form" id="formSubmit" method="post" action="/Carts/VisaPay?action=sendOrderToAlepay">
+        <form name="checkoutAlepay" class="form" id="formSubmit" method="post" action="/Carts/Visa?action=sendOrderToAlepay">
 
             <div class="form-group col-sm-5">
                 <label class="control-label">Tổng Tiền <span class="require">(*)</span></label>
@@ -70,51 +71,52 @@
 
 
             <div class="row">
-                <input id="action" name="action" type="hidden" value="sendOrderToApay"/>
+                <input id="action" name="action" type="hidden" value="sendOrderToApay" />
             </div>
 
             <div class="col-sm-10" id="alert">
                 <!--   <div runat="server" id="showresultErrors" class="alert alert-danger"></div>-->
             </div>
 
-            
-                <div class="form-group col-sm-5">
-                    <p>&nbsp;</p>
-                    <button id="sendInstallment" type="submit" class="btn btn-info btn-lg">Thanh toán</button>
-                
+
+            <div class="form-group col-sm-5">
+                <p>&nbsp;</p>
+                <button id="sendInstallment" type="submit" class="btn btn-info btn-lg">Thanh toán</button>
+
             </div>
         </form>
     </div>
-    
+
     <div id="sendOrderToAlepayInstallment" class="modal fade in" role="dialog" runat="server">
         <iframe id="frame" scrolling="no" style="overflow: hidden;height: 100%;width: 100%;border: none;"></iframe>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    @*<script type="text/javascript">
-        $('#sendInstallment').on('click', function () {
-            $('#alert').html('Vui lòng chờ ít phút...');
-            $.ajax({
-                type: "POST",
-                url: $("#formSubmit").prop('action'),
-                data: $("#formSubmit").serialize(), // serializes the form's elements.
-                success: function (data) {
-                    console.log(data.errorCode);
-                    if (typeof data.errorCode != 'undefined' || data.checkoutUrl == '') {
-                        $('#alert').html('<div class="alert alert-danger">' + data.errorDescription + '</div>');
-                        return false;
-                    } else {
-                        $('#frame').prop('src', data.checkoutUrl);
-                        $('#sendOrderToAlepayInstallment').modal('show');
-                        $('#alert').html('');
-                    }
+    <script type="text/javascript">
+            $('#sendInstallment').on('click', function () {
+                $('#alert').html('Vui lòng chờ ít phút...');
+                $.ajax({
+                    type: "POST",
+                    url: $("#formSubmit").prop('action'),
+                    data: $("#formSubmit").serialize(), // serializes the form's elements.
+                    success: function (data) {
+                        console.log(data.errorCode);
+                        if (typeof data.errorCode != 'undefined' || data.checkoutUrl == '') {
+                            $('#alert').html('<div class="alert alert-danger">' + data.errorDescription + '</div>');
+                            return false;
+                        } else {
+                            $('#frame').prop('src', data.checkoutUrl);
+                            $('#sendOrderToAlepayInstallment').modal('show');
+                            $('#alert').html('');
+                        }
 
-                }
+                    }
+                });
+                return false;
             });
-            return false;
-        });
-        $('#frame').on('load', function () {
-            this.style.height = this.contentDocument.body.scrollHeight + 'px';
-        });
-    </script>*@
+            $('#frame').on('load', function () {
+                this.style.height = this.contentDocument.body.scrollHeight + 'px';
+            });
+        </script>
 </body>
+</html>
