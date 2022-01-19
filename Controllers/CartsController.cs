@@ -108,19 +108,20 @@ namespace LAPTRINHWEB.Controllers
             }
             return RedirectToAction("GioHang");
         }
-        public ActionResult KetQua(FormCollection f)
+        public ActionResult KetQua()
         {
-            try
+            if (Request.QueryString["data"] != null)
             {
-                Payment.ThanhToan(Tongtien());
-                ViewBag.Message = "Thành công!";
-                return View();
+                var request_data = Request.QueryString["data"];
+
+                var data_base64 = Alepay.Base64Decode(request_data);
+
+                var decData = Crypter.Decrypt<ResponseCallback>(data_base64);
+
+                var result_trans = Alepay.getTransactionInfo(decData.data);
+                ViewBag.Message = result_trans;
             }
-            catch
-            {
-                ViewBag.Message = "Thất bại!";
-                return View();
-            }
+            return View();
         }
 
         public ActionResult HinhThuc()
@@ -128,26 +129,32 @@ namespace LAPTRINHWEB.Controllers
             return View();     
         }
 
-        public ActionResult Visa(FormCollection f)
+        public ActionResult Visa()
         {
-            return View();
+            Response.Clear();
+            Response.AddHeader("Content-type", "text/json");
+            var rs = this.SendOrdertToAlepay();
+            Response.Write(rs);
+            Response.End();
+
+            return View("KetQua");
         }
 
         public string SendOrdertToAlepay()
         {
             RequestData rq = new RequestData();
-            rq.amount = Request.Form["amount"];
-            rq.currency = Request.Form["currency"];
-            rq.orderDescription = Request.Form["orderDescription"];
-            rq.totalItem = Request.Form["totalItem"];
-            rq.buyerName = Request.Form["buyerName"];
-            rq.buyerEmail = Request.Form["buyerEmail"];
-            rq.buyerPhone = Request.Form["buyerPhone"];
-            rq.buyerAddress = Request.Form["buyerAddress"];
-            rq.buyerCity = Request.Form["buyerCity"];
-            rq.buyerCountry = Request.Form["buyerCountry"];
+            rq.amount = Tongtien().ToString();
+            rq.currency = "VND";
+            rq.orderDescription = "Thanh toán hóa đơn";
+            rq.totalItem = Tongsoluong().ToString();
+            rq.buyerName = "Nguyễn Xuân Hùng";
+            rq.buyerEmail = "hung@gmail.com";
+            rq.buyerPhone = "0848506079";
+            rq.buyerAddress = "209 Quốc lộ 13";
+            rq.buyerCity = "Thành phố Hồ Chí Minh";
+            rq.buyerCountry = "Việt Nam";
 
-            rq.orderCode = DateTime.Now.ToString("Mdyyyy");
+            rq.orderCode = DateTime.Now.ToString("ddMMyyyy");
             rq.checkoutType = "1"; // Thanh toán
             rq.allowDomestic = false;// Thanh toán bằng thẻ nội địa
             rq.paymentHours = "48";
