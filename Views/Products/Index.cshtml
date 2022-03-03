@@ -37,11 +37,16 @@
         </div>
     }
 </div>
-<div class="MenuTrang" style="text-align: center">
-    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+<div class="container menu_Page">
+    <div class="pagination" style="text-align: center">
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+    </div>
 </div>
+
 <style>
-    .MenuTrang li {
-        display: inline;
+    .menu_Page {
+        width: 100%;
+        justify-content: center;
+        display: flex;
     }
 </style>
